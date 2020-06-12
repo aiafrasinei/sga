@@ -18,6 +18,12 @@ int main(int argc, char *argv[])
     sga_set_drawchar(sctx,'#');
     sga_point(sctx, 2, 2);
     
+    sga_line(sctx, 0, 0, 15, 0);
+
+    sga_rect(sctx,4,10,4,4);
+    sga_curs_to(sctx, 5, 5);
+    sga_curs_rect(sctx,4,4);
+    
     refresh();
     getch();
 
