@@ -96,9 +96,6 @@ int main(int argc, const char *argv[])
 
 		sga_rect(dctx, 60, 60, 20, 20);
 
-		sga_curs_to(dctx,100,100);
-		sga_curs_rect(dctx, 50, 50);
-
 		SDL_RenderPresent(gRenderer);
 	}
 

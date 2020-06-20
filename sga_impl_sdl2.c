@@ -23,28 +23,6 @@ void sga_init(struct sga_ctx *context, SDL_Renderer *grenderer)
     context->renderer = grenderer;
 }
 
-void sga_curs_to(struct sga_ctx *ctx, int x, int y)
-{
-    ctx->cursx = x;
-    ctx->cursy = y;
-}
-
-void sga_curs_point(struct sga_ctx *ctx)
-{
-    SDL_RenderDrawPoint(ctx->renderer, ctx->cursx, ctx->cursy);
-}
-
-void sga_curs_line(struct sga_ctx *ctx, int x, int y)
-{
-    SDL_RenderDrawLine(ctx->renderer, ctx->cursx, ctx->cursy, x, y);
-}
-
-void sga_curs_rect(struct sga_ctx *ctx, int width, int height)
-{
-    SDL_Rect rect = {ctx->cursx, ctx->cursy, width, height};
-    SDL_RenderDrawRect(ctx->renderer, &rect);
-}
-
 void sga_point(struct sga_ctx *ctx, int x, int y)
 {
     SDL_RenderDrawPoint(ctx->renderer, x, y);
@@ -71,7 +49,7 @@ void sga_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
     SDL_RenderDrawRect(ctx->renderer, &rect);
 }
 
-void sga_draw_rect_f(struct sga_ctx *ctx, float x, float y, float width, float height)
+void sga_rect_f(struct sga_ctx *ctx, float x, float y, float width, float height)
 {
     SDL_FRect rect = {x, y, width, height};
     SDL_RenderDrawRectF(ctx->renderer, &rect);
