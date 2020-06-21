@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <stdio.h>
 
-#include "sga_impl_sdl2_opengl2.h"
+#include "sga_impl_sdl2.h"
 
 
 SDL_Window* gWindow = NULL;
@@ -94,7 +94,7 @@ int main(int argc, const char *argv[])
 		SDL_SetRenderDrawColor(gRenderer, 255, 255, 255, 255);
 		sga_point(sctx, 50, 50);
 
-		sga_line_f(sctx, 50, 50, 100.332f, 200.0f);
+		sga_line(sctx, 50, 50, 100.332f, 200.0f);
 
 		sga_color(sctx, 240, 0, 0, 255);
 		sga_rect(sctx, 60, 60, 20, 20);

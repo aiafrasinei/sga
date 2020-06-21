@@ -1,3 +1,4 @@
+CC = gcc
 EXE = sga_example_x11
 SOURCES = main.c
 SOURCES += ../../sga_impl_x11.c
@@ -12,16 +13,16 @@ LIBS = -lX11
 ##---------------------------------------------------------------------
 
 %.o:%.c
-		gcc $(CFLAGS) -c -o $@ $<
+		$(CC) $(CFLAGS) -c -o $@ $<
 
 %.o:../../%.c
-		gcc $(CFLAGS) -c -o $@ $<
+		$(CC) $(CFLAGS) -c -o $@ $<
 
 all: $(EXE)
 		@echo build complete
 
 $(EXE): $(OBJS)
-		gcc -o $@ $^ $(CXXFLAGS) $(LIBS)
+		$(CC) -o $@ $^ $(CXXFLAGS) $(LIBS)
 
 clean:
 		rm -f $(EXE) $(OBJS)

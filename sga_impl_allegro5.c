@@ -1,10 +1,11 @@
 #include <stdlib.h>
-#include "sga_impl_sdl2.h"
-
+#include "sga_impl_allegro5.h"
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_primitives.h>
 
 
 struct sga_ctx {
-    SDL_Renderer *renderer;
+
 };
 
 
@@ -15,36 +16,30 @@ struct sga_ctx *sga_start()
     return ctx;
 }
 
-void sga_init(struct sga_ctx *ctx, SDL_Renderer *grenderer)
-{
-    ctx->renderer = grenderer;
-}
 
 void sga_point(struct sga_ctx *ctx, float x, float y)
 {
-    SDL_RenderDrawPointF(ctx->renderer, x, y);
+    al_draw_pixel(x, y, al_map_rgb(255,255,255));
 }
 
 void sga_line(struct sga_ctx *ctx, float x0, float y0, float x1, float y1)
 {
-    SDL_RenderDrawLineF(ctx->renderer, x0, y0, x1, y1);
+    al_draw_line(x0, y0, x1, y1, al_map_rgb(255,255,255), 1);
 }
 
 void sga_rect(struct sga_ctx *ctx, float x, float y, float width, float height)
 {
-    SDL_FRect rect = {x, y, width, height};
-    SDL_RenderDrawRectF(ctx->renderer, &rect);
+    al_draw_rectangle(x, y, width, height, al_map_rgb(255,255,255), 1);
 }
 
 void sga_fill_rect(struct sga_ctx *ctx, float x, float y, float width, float height)
 {
-    SDL_FRect rect = {x, y, width, height};
-    SDL_RenderFillRectF(ctx->renderer, &rect);
+    al_draw_filled_rectangle(x, y, width, height, al_map_rgb(255,255,255));
 }
 
 void sga_color(struct sga_ctx *ctx, int r, int g, int b, int a)
 {
-    SDL_SetRenderDrawColor(ctx->renderer, r, g, b, a);
+
 }
 
 void sga_end(struct sga_ctx *ctx)

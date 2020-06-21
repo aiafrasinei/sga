@@ -7,6 +7,7 @@ implementations:
 * ncurses
 * SDL2
 * X11
+* opengl2
 
 how to build:
 

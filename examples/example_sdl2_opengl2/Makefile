@@ -1,3 +1,4 @@
+CC = gcc
 EXE = sga_example_sdl2_opengl2
 SOURCES = main.c sga_impl_sdl2_opengl2.c
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
@@ -30,19 +31,19 @@ endif
 ##---------------------------------------------------------------------
 
 %.o:%.c
-	gcc $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 %.o:../%.c
-	gcc $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 %.o:../../%.c
-	gcc $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 all: $(EXE)
 	@echo build complete
 
 $(EXE): $(OBJS)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 clean:
 	rm -f $(EXE) $(OBJS)

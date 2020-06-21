@@ -1,12 +1,12 @@
 CC = gcc
-EXE = sga_example_sdl2 
-SOURCES = main.c sga_impl_sdl2.c
+EXE = sga_example_allegro5
+SOURCES = main.c sga_impl_allegro5.c
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 UNAME_S := $(shell uname -s)
 
-CFLAGS += -I../ -I../../
+CFLAGS += -I../ -I../../ -DDEBUG -g
 CFLAGS += -g -Wall -Wformat
-LIBS =
+LIBS = 
 
 ##---------------------------------------------------------------------
 ## BUILD FLAGS PER PLATFORM
@@ -14,9 +14,7 @@ LIBS =
 
 ifeq ($(UNAME_S), Linux) #LINUX
 	ECHO_MESSAGE = "Linux"
-	LIBS += -lGL -ldl `sdl2-config --libs`
-
-	CFLAGS += `sdl2-config --cflags`
+	LIBS += -lGL -ldl -lallegro -lallegro_primitives
 endif
 
 ifeq ($(findstring MINGW,$(UNAME_S)),MINGW)
