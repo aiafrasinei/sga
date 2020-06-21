@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
     struct sga_ctx *sctx = sga_start();
 
     sga_point(sctx, 10, 10);
-    sga_curs_to(sctx, 5, 5);
-    sga_curs_point(sctx);
 
     sga_set_drawchar(sctx,'#');
     sga_point(sctx, 2, 2);
@@ -21,8 +19,8 @@ int main(int argc, char *argv[])
     sga_line(sctx, 0, 0, 15, 0);
 
     sga_rect(sctx,4,10,4,4);
-    sga_curs_to(sctx, 5, 5);
-    sga_curs_rect(sctx,4,4);
+
+    sga_fill_rect(sctx, 15, 10, 4, 4);
     
     refresh();
     getch();

@@ -1,5 +1,5 @@
-#ifndef sga_impl_sdl2_h_
-#define sga_impl_sdl2_h_
+#ifndef sga_impl_sdl2_opengl2_h_
+#define sga_impl_sdl2_opengl2_h_
 
 #include <SDL.h>
 #include "sga_version.h"
@@ -10,7 +10,6 @@ struct sga_ctx;
 
 /*start*/
 struct sga_ctx * sga_start();
-void sga_init(struct sga_ctx *ctx, SDL_Renderer *grenderer);
 
 /*simple*/
 void sga_point(struct sga_ctx *ctx, int x, int y);

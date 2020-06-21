@@ -44,6 +44,13 @@ void sga_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
     mvhline(y + height - 1, x + 1, ctx->drawc, width * 2 - 2);
 }
 
+void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
+{
+    for (int i=0; i <= width*2-2; i++) {
+        mvvline(y, x+i, ctx->drawc, height);
+    }
+}
+
 void sga_end(struct sga_ctx *ctx)
 {
     free(ctx);

@@ -2,14 +2,14 @@
 #include <SDL.h>
 #include <stdio.h>
 
-#include "sga_impl_sdl2.h"
+#include "sga_impl_sdl2_opengl2.h"
 
 
 SDL_Window* gWindow = NULL;
 SDL_Renderer* gRenderer = NULL;
 SDL_Rect tex_rect;
 
-struct sga_ctx *dctx = NULL;
+struct sga_ctx *sctx = NULL;
 
 int init()
 {
@@ -53,8 +53,8 @@ int init()
 
 int start()
 {
-	dctx = sga_start();
-	sga_init(dctx, gRenderer);
+	sctx = sga_start();
+	sga_init(sctx, gRenderer);
 
 	return 1;
 }
@@ -67,7 +67,7 @@ void stop()
 	gRenderer = NULL;
 
 	SDL_Quit();
-	sga_end(dctx);
+	sga_end(sctx);
 }
 
 int main(int argc, const char *argv[])
@@ -92,9 +92,14 @@ int main(int argc, const char *argv[])
 		SDL_RenderClear(gRenderer);
 
 		SDL_SetRenderDrawColor(gRenderer, 255, 255, 255, 255);
-		sga_point(dctx, 50, 50);
+		sga_point(sctx, 50, 50);
 
-		sga_rect(dctx, 60, 60, 20, 20);
+		sga_line_f(sctx, 50, 50, 100.332f, 200.0f);
+
+		sga_color(sctx, 240, 0, 0, 255);
+		sga_rect(sctx, 60, 60, 20, 20);
+
+		sga_fill_rect(sctx, 160, 60, 30, 30);
 
 		SDL_RenderPresent(gRenderer);
 	}

@@ -55,6 +55,23 @@ void sga_rect_f(struct sga_ctx *ctx, float x, float y, float width, float height
     SDL_RenderDrawRectF(ctx->renderer, &rect);
 }
 
+void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
+{
+    SDL_Rect rect = {x, y, width, height};
+    SDL_RenderFillRect(ctx->renderer, &rect);
+}
+
+void sga_fill_rect_f(struct sga_ctx *ctx, float x, float y, float width, float height)
+{
+    SDL_FRect rect = {x, y, width, height};
+    SDL_RenderFillRectF(ctx->renderer, &rect);
+}
+
+void sga_color(struct sga_ctx *ctx, int r, int g, int b, int a)
+{
+    SDL_SetRenderDrawColor(ctx->renderer, r, g, b, a);
+}
+
 void sga_end(struct sga_ctx *ctx)
 {
     free(ctx);

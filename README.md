@@ -2,12 +2,17 @@
 
 simple graphics api 
 
+
 implementations:
-ncurses
-SDL2
+* ncurses
+* SDL2
+* X11
 
 how to build:
-Makefile for gcc (windows,linux)
+
+gcc
+makefiles provided
+install the libraries for you system
 
 windows
 install msys2,gcc
