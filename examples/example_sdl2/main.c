@@ -59,7 +59,7 @@ int start()
 	return 1;
 }
 
-void stop()
+void end()
 {
 	SDL_DestroyRenderer(gRenderer);
 	SDL_DestroyWindow(gWindow);
@@ -104,7 +104,7 @@ int main(int argc, const char *argv[])
 		SDL_RenderPresent(gRenderer);
 	}
 
-    stop();
+    end();
 
     return 0;
 }

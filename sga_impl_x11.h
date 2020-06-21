@@ -24,6 +24,9 @@ void sga_rect(struct sga_ctx *ctx, int x, int y, int width, int height);
 
 void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height);
 
+/*colors*/
+void sga_color(struct sga_ctx *ctx, int r, int g, int b, int a);
+
 /*end*/
 void sga_end(struct sga_ctx *ctx);
 

@@ -50,7 +50,6 @@ int main(int argc, char *argv[])
 
 	al_start_timer(timer);
 
-	// Game loop
 	while (running) {
 		ALLEGRO_EVENT event;
 		ALLEGRO_TIMEOUT timeout;
