@@ -1,7 +1,6 @@
+#define SDL_MAIN_HANDLED
 #define GL_GLEXT_PROTOTYPES
 
-#include <SDL.h>
-#include <SDL_opengl.h>
 #include "sga_impl_sdl2_opengl2.h"
 #include <stdio.h>
 

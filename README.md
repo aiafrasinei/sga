@@ -3,6 +3,9 @@
 simple graphics api 
 
 
+minimal graphics 
+(point, line, rectangle and colors)
+
 implementations:
 * SDL2
 * X11
@@ -15,7 +18,12 @@ how to build:
 
 gcc
 makefiles provided
-install the libraries for you system
+install libraries for the implementation you want to use
+
+windows:
+use gcc dist from msys2
+pacman -S to install the libs
+https://www.msys2.org/
 
 win32 example:
 Visual Studio 2019 solution

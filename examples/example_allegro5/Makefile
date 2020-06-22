@@ -17,11 +17,8 @@ ifeq ($(UNAME_S), Linux) #LINUX
 	LIBS += -lGL -ldl -lallegro -lallegro_primitives
 endif
 
-ifeq ($(findstring MINGW,$(UNAME_S)),MINGW)
-	ECHO_MESSAGE = "MinGW"
-	LIBS += -lgdi32 -lopengl32 -limm32 `pkg-config --static --libs sdl2`
-
-	CFLAGS += `pkg-config --cflags sdl2`
+ifeq ($(findstring MSYS,$(UNAME_S)),MSYS)
+	LIBS += -lgdi32 -lopengl32 -limm32 -lallegro -lallegro_primitives
 endif
 
 ##---------------------------------------------------------------------

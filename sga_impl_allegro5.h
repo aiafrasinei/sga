@@ -3,6 +3,8 @@
 
 #include "sga_version.h"
 #include "sga_coord.h"
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_primitives.h>
 
 
 struct sga_ctx;

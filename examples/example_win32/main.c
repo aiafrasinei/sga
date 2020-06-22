@@ -69,7 +69,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         sga_point(sctx, 90, 90);
         sga_fill_rect(sctx, 10, 10, 30, 30);
-        sga_line(sctx, 100, 100, 200, 300);       
+        sga_line(sctx, 100, 100, 200, 300);
+        sga_rect(sctx, 50, 50, 30, 30);
 
         EndPaint(hwnd, &ps);
         return 0;

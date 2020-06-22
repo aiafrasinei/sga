@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include "sga_impl_allegro5.h"
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_primitives.h>
 
 
 struct sga_ctx {

@@ -6,7 +6,7 @@ UNAME_S := $(shell uname -s)
 
 CFLAGS += -I../ -I../../ -DDEBUG -g
 CFLAGS += -g -Wall -Wformat
-LIBS = -lGLU
+LIBS = 
 
 ##---------------------------------------------------------------------
 ## BUILD FLAGS PER PLATFORM
@@ -14,16 +14,13 @@ LIBS = -lGLU
 
 ifeq ($(UNAME_S), Linux) #LINUX
 	ECHO_MESSAGE = "Linux"
-	LIBS += -lGL -ldl `sdl2-config --libs`
+	LIBS += -lGL -lGLU -ldl `sdl2-config --libs`
 
 	CFLAGS += `sdl2-config --cflags`
 endif
 
-ifeq ($(findstring MINGW,$(UNAME_S)),MINGW)
-	ECHO_MESSAGE = "MinGW"
-	LIBS += -lgdi32 -lopengl32 -limm32 `pkg-config --static --libs sdl2`
-
-	CFLAGS += `pkg-config --cflags sdl2`
+ifeq ($(findstring MSYS,$(UNAME_S)),MSYS)
+	LIBS += -lgdi32 -lopengl32 -limm32 -lSDL2
 endif
 
 ##---------------------------------------------------------------------

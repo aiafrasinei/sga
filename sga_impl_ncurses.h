@@ -20,6 +20,10 @@ void sga_rect(struct sga_ctx *ctx, int x, int y, int width, int height);
 
 void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height);
 
+/*colors*/
+void sga_color(struct sga_ctx *ctx, int color);
+void sga_color_fb(struct sga_ctx *ctx, int fgcolor, int bkcolor);
+
 /*specific*/
 void sga_set_drawchar(struct sga_ctx *ctx, char drawchar);
 

@@ -1,7 +1,7 @@
 #ifndef sga_impl_sdl2_h_
 #define sga_impl_sdl2_h_
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "sga_version.h"
 #include "sga_coord.h"
 

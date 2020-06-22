@@ -34,7 +34,8 @@ void sga_line(struct sga_ctx *ctx, int x0, int y0, int x1, int y1)
 
 void sga_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
 {
-
+    SelectObject(ctx->hdc, GetStockObject(NULL_BRUSH));
+    Rectangle(ctx->hdc, x, y, x + width, y + height);
 }
 
 void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
