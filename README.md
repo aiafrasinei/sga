@@ -5,6 +5,7 @@ simple graphics api
 
 minimal graphics 
 (point, line, rectangle and colors)
+not very usefull, fun to see how different graphics api are designed
 
 implementations:
 * SDL2
@@ -23,9 +24,7 @@ windows:\
 use gcc dist from msys2\
 pacman -S to install the libs\
 https://www.msys2.org/
+use the MSYS2 MinGW 64-bit cmd prompt\
 
 win32 example:\
 Visual Studio 2019 solution
-
-issues:\
-cant build allegro5 example with msys2, it doesnt find the libs

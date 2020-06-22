@@ -52,7 +52,7 @@ void sga_fill_rect(struct sga_ctx *ctx, float x, float y, float width, float hei
     glEnd();
 }
 
-void sga_color(struct sga_ctx *ctx, int r, int g, int b, int a)
+void sga_color(struct sga_ctx *ctx, int r, int g, int b)
 {
     glColor3f(r, g, b);
 }

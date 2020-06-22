@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_primitives.h>
 #include "sga_impl_allegro5.h"
 
 

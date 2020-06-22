@@ -42,9 +42,9 @@ void sga_fill_rect(struct sga_ctx *ctx, float x, float y, float width, float hei
     SDL_RenderFillRectF(ctx->renderer, &rect);
 }
 
-void sga_color(struct sga_ctx *ctx, int r, int g, int b, int a)
+void sga_color(struct sga_ctx *ctx, int r, int g, int b)
 {
-    SDL_SetRenderDrawColor(ctx->renderer, r, g, b, a);
+    SDL_SetRenderDrawColor(ctx->renderer, r, g, b, 255);
 }
 
 void sga_end(struct sga_ctx *ctx)

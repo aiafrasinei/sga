@@ -43,6 +43,10 @@ void sga_fill_rect(struct sga_ctx *ctx, int x, int y, int width, int height)
     XFillRectangle(ctx->dis, ctx->win, ctx->gc, x, y, width, height); 
 }
 
+void sga_color(struct sga_ctx *ctx, int r, int g, int b)
+{
+    
+}
 
 void sga_end(struct sga_ctx *ctx)
 {

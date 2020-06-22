@@ -69,7 +69,11 @@ int main( int argc, char * argv[] )
         glLoadIdentity();
     
         sga_point(sctx, 100, 100);
+        
+        sga_color(sctx, 255, 0, 0);
         sga_line(sctx, 150, 100, 300, 300);
+
+        sga_color(sctx, 255, 255, 255);
         sga_fill_rect(sctx, 200, 200, 20, 20);
 
         sga_rect(sctx, 50, 50, 30, 30);

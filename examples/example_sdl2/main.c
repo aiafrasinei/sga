@@ -90,12 +90,12 @@ int main(int argc, const char *argv[])
 		SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 255);
 		SDL_RenderClear(gRenderer);
 
-		sga_color(sctx, 255, 255, 255, 255);
+		sga_color(sctx, 255, 255, 255);
 		sga_point(sctx, 50, 50);
 
 		sga_line(sctx, 50, 50, 100.332f, 200.0f);
 
-		sga_color(sctx, 240, 0, 0, 255);
+		sga_color(sctx, 240, 0, 0);
 		sga_rect(sctx, 60, 60, 20, 20);
 
 		sga_fill_rect(sctx, 160, 60, 30, 30);

@@ -4,7 +4,7 @@ SOURCES = main.c sga_impl_allegro5.c
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 UNAME_S := $(shell uname -s)
 
-CFLAGS += -I../ -I../../ -DDEBUG -g
+CFLAGS += -I../ -I../../
 CFLAGS += -g -Wall -Wformat
 LIBS = 
 
@@ -17,7 +17,7 @@ ifeq ($(UNAME_S), Linux) #LINUX
 	LIBS += -lGL -ldl -lallegro -lallegro_primitives
 endif
 
-ifeq ($(findstring MSYS,$(UNAME_S)),MSYS)
+ifeq ($(findstring MINGW64,$(UNAME_S)),MINGW64)
 	LIBS += -lgdi32 -lopengl32 -limm32 -lallegro -lallegro_primitives
 endif
 

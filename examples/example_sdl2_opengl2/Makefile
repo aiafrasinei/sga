@@ -19,7 +19,7 @@ ifeq ($(UNAME_S), Linux) #LINUX
 	CFLAGS += `sdl2-config --cflags`
 endif
 
-ifeq ($(findstring MSYS,$(UNAME_S)),MSYS)
+ifeq ($(findstring MINGW64,$(UNAME_S)),MINGW64)
 	LIBS += -lgdi32 -lopengl32 -limm32 -lSDL2
 endif
 
