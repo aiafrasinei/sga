@@ -14,17 +14,18 @@ implementations:
 * win32
 * ncurses
 
-how to build:
+how to build:\
+gcc\
+makefiles provided\
+install libraries for the implementation you want to use\
 
-gcc
-makefiles provided
-install libraries for the implementation you want to use
-
-windows:
-use gcc dist from msys2
-pacman -S to install the libs
+windows:\
+use gcc dist from msys2\
+pacman -S to install the libs\
 https://www.msys2.org/
 
-win32 example:
+win32 example:\
 Visual Studio 2019 solution
 
+issues:\
+cant build allegro5 example with msys2, it doesnt find the libs
