@@ -1,7 +1,12 @@
 #ifndef sga_impl_sdl2_h_
 #define sga_impl_sdl2_h_
 
+#ifdef __APPLE__
+#include <SDL.h>
+#else
 #include <SDL2/SDL.h>
+#endif
+
 #include "sga_version.h"
 #include "sga_coord.h"
 

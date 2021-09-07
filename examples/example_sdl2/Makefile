@@ -12,9 +12,16 @@ LIBS =
 ## BUILD FLAGS PER PLATFORM
 ##---------------------------------------------------------------------
 
-ifeq ($(UNAME_S), Linux) #LINUX
+ifeq ($(UNAME_S), Linux)
 	ECHO_MESSAGE = "Linux"
 	LIBS += -lGL -ldl `sdl2-config --libs`
+
+	CFLAGS += `sdl2-config --cflags`
+endif
+
+ifeq ($(shell uname), Darwin)
+	ECHO_MESSAGE = "Darwin"
+	LIBS += `sdl2-config --libs`
 
 	CFLAGS += `sdl2-config --cflags`
 endif
