@@ -22,8 +22,12 @@ void init() {
    	screen=DefaultScreen(dis);
 	black=BlackPixel(dis,screen),
 	white=WhitePixel(dis, screen);
+
+	const int WIDTH = 1024;
+	const int HEIGHT = 768;
+
    	win=XCreateSimpleWindow(dis,DefaultRootWindow(dis),0,0,	
-		1024, 768, 5, white, black);
+		WIDTH, HEIGHT, 5, white, black);
 	XSetStandardProperties(dis,win,"sga_example_x11","sga_example_x11",None,NULL,0,NULL);
 	XSelectInput(dis, win, ExposureMask|ButtonPressMask|KeyPressMask);
     	gc=XCreateGC(dis, win, 0,0);        
@@ -46,10 +50,15 @@ int main(int argc, char *argv[]) {
 	sga_init(sctx, dis, win, gc);
 
 	while(1) {
-		sga_line(sctx, 50, 100, 200,200);
-		sga_point(sctx, 120, 120);
-		sga_rect(sctx, 70, 70, 30, 30);
-		sga_fill_rect(sctx, 90, 90, 20, 20);
+		sga_color(sctx, 255, 255, 255);
+		sga_point(sctx, 50, 50);
+
+		sga_line(sctx, 130, 50, 100.332f, 200.0f);
+
+		sga_color(sctx, 240, 0, 0);
+		sga_rect(sctx, 60, 60, 20, 20);
+
+		sga_fill_rect(sctx, 160, 60, 30, 30);
 		
 		XNextEvent(dis, &event);
 	

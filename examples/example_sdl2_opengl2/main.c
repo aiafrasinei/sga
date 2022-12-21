@@ -4,8 +4,6 @@
 #include "sga_impl_sdl2_opengl2.h"
 #include <stdio.h>
 
-const int width = 1024;
-const int height = 768;
 
 struct sga_ctx *sctx = NULL;
 
@@ -44,7 +42,10 @@ int main( int argc, char * argv[] )
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
-    SDL_Window * window = SDL_CreateWindow("", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+    const int WIDTH = 1024;
+    const int HEIGHT = 768;
+
+    SDL_Window * window = SDL_CreateWindow("", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
     SDL_GLContext context = SDL_GL_CreateContext(window);
 
     start();
@@ -68,10 +69,10 @@ int main( int argc, char * argv[] )
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
     
-        sga_point(sctx, 100, 100);
+        sga_color(sctx, 255, 255, 255);
+        sga_point(sctx, 50, 50);
         
-        sga_color(sctx, 255, 0, 0);
-        sga_line(sctx, 150, 100, 300, 300);
+        sga_line(sctx, 130, 50, 300, 300);
 
         sga_color(sctx, 255, 255, 255);
         sga_fill_rect(sctx, 200, 200, 20, 20);

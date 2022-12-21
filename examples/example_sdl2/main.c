@@ -6,7 +6,6 @@
 
 SDL_Window* gWindow = NULL;
 SDL_Renderer* gRenderer = NULL;
-SDL_Rect tex_rect;
 
 struct sga_ctx *sctx = NULL;
 
@@ -26,7 +25,10 @@ int init()
 			printf("Warning: Linear texture filtering not enabled!");
 		}
 
-		gWindow = SDL_CreateWindow("sga sdl2 example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1024, 768, SDL_WINDOW_SHOWN);
+		const int WIDTH = 1024;
+		const int HEIGHT = 768;
+
+		gWindow = SDL_CreateWindow("sga sdl2 example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
 		if( gWindow == NULL )
 		{
 			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
@@ -93,7 +95,7 @@ int main(int argc, const char *argv[])
 		sga_color(sctx, 255, 255, 255);
 		sga_point(sctx, 50, 50);
 
-		sga_line(sctx, 50, 50, 100.332f, 200.0f);
+		sga_line(sctx, 130, 50, 100.332f, 200.0f);
 
 		sga_color(sctx, 240, 0, 0);
 		sga_rect(sctx, 60, 60, 20, 20);

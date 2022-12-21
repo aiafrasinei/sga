@@ -28,7 +28,10 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	display = al_create_display(640, 480);
+	const int WIDTH = 1024;
+	const int HEIGHT = 768;
+
+	display = al_create_display(WIDTH, HEIGHT);
 	if (!display) {
 		fprintf(stderr, "Failed to create display.\n");
 		return 1;
@@ -71,10 +74,17 @@ int main(int argc, char *argv[])
 		}
 
         al_clear_to_color(al_map_rgb(0, 0, 0));
-        sga_line(sctx, 100, 100, 400, 400);
-        sga_fill_rect(sctx, 50, 50, 30, 30);
-        sga_point(sctx, 200, 10);
 
+        sga_color(sctx, 255, 255, 255);
+		sga_point(sctx, 50, 50);
+
+		sga_line(sctx, 130, 50, 100.332f, 200.0f);
+
+		sga_color(sctx, 240, 0, 0);
+		sga_rect(sctx, 60, 60, 20, 20);
+
+		sga_fill_rect(sctx, 160, 60, 30, 30);
+		
 	    al_flip_display();
 
 	} 

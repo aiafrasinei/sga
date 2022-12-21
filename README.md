@@ -8,15 +8,17 @@ minimal graphics
 not very usefull, fun to see how different graphics api are designed
 
 implementations:
-* SDL2
 * X11
 * opengl2
 * allegro5
 * win32
 * ncurses
+* SDL1
+* SDL2
 
-how to build:\
-gcc\
+how to build\
+
+linux:\
 makefiles provided\
 install libraries for the implementation you want to use\
 
