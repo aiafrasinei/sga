@@ -86,7 +86,6 @@ int main(int argc, char *argv[])
 		sga_fill_rect(sctx, 160, 60, 30, 30);
 		
 	    al_flip_display();
-
 	} 
 
 	// Clean up
