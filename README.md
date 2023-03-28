@@ -15,6 +15,7 @@ Implementations
 * SDL1
 * SDL2
 * sfml
+* cairo
 
 How to build
 
