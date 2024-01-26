@@ -4,7 +4,7 @@ simple graphics api
 
 minimal graphics 
 (point, line, rectangle and colors)
-not very usefull, fun to see how different graphics api are designed
+not very useful, fun to see how different graphics api are designed
 
 Implementations
 * X11
@@ -16,6 +16,7 @@ Implementations
 * SDL2
 * sfml
 * cairo
+* raylib
 
 How to build
 
@@ -30,4 +31,4 @@ https://www.msys2.org/
 use the MSYS2 MinGW 64-bit cmd prompt
 
 win32 example:\
-Visual Studio 2019 solution
+Visual Studio 2022 solution
