@@ -14,6 +14,7 @@ Implementations
 * ncurses
 * SDL1
 * SDL2
+* SDL3
 * sfml
 * cairo
 * raylib
