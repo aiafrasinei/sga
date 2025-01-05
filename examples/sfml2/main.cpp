@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 
-#include "sga_impl_sfml.h"
+#include "sga_impl_sfml2.h"
 
 
 struct sga_ctx *sctx = NULL;
@@ -11,7 +11,7 @@ int init()
     const int WIDTH = 1024;
 	const int HEIGHT = 768;
 
-    window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "sga_example_sfml");
+    window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "sga_example_sfml2");
 }
 
 int start()

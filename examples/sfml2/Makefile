@@ -1,6 +1,6 @@
 CC = g++
-EXE = sga_example_sfml
-SOURCES = main.cpp sga_impl_sfml.cpp
+EXE = sga_example_sfml2
+SOURCES = main.cpp sga_impl_sfml2.cpp
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
 UNAME_S := $(shell uname -s)
 

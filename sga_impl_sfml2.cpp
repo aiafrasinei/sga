@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "sga_impl_sfml.h"
+#include "sga_impl_sfml2.h"
 
 
 struct Line {

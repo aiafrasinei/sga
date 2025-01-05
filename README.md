@@ -15,7 +15,7 @@ Implementations
 * SDL1
 * SDL2
 * SDL3
-* sfml
+* SFML2
 * cairo
 * raylib
 
